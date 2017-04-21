@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+
+    <!-- Colores para temas -->
+
+    <color name="colorPrimary">#3c494f</color>
+    <color name="colorPrimary2">#3fb09e</color>
+    <color name="colorPrimaryDark">#3c494f</color>
+    <color name="colorPrimaryDark2">#319383</color>
+    <color name="colorAccent">#FF3EB09D</color>
+    <color name="colorAccent2">#9b9b9b</color>
+    <color name="colorAccentLight">#FFA4DCDE</color>
+    <color name="colorAccentLight2">#ececec</color>
+
+    <!-- Colores flat para cards -->
+
+    <color name="cardFlat01">#004744</color>
+    <color name="cardFlat02">#008378</color>
+    <color name="cardFlat03">#00a8a1</color>
+    <color name="cardFlat04">#ecc956</color>
+    <color name="cardFlat05">#15a659</color>
+    <color name="cardFlat06">#13824a</color>
+    <color name="cardFlat07">#abb7b7</color>
+    <color name="cardFlat08">#f2c415</color>
+    <color name="cardFlat09">#4f4f4f</color>
+    <color name="cardFlat010">#ac8155</color>
+    <color name="cardFlat011">#d8a46b</color>
+    <color name="cardFlat012">#48bea5</color>
+    <color name="cardFlat013">#ff6966</color>
+    <color name="cardFlat014">#d75252</color>
+    <color name="cardFlat015">#d35442</color>
+    <color name="cardFlat016">#3698db</color>
+
+    <!-- Colores para mensajes de alertas -->
+
+    <color name="foot_alert">#ffca45</color>
+    <color name="foot_alert2">#a3fff6</color>
+
 </resources>

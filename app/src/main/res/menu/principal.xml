@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:android="http://schemas.android.com/apk/res/android">
+
+<item
+    android:id="@+id/Menu_Opc1"
+    android:title="Limpiar Memoria" />
+<item
+    android:id="@+id/Menu_Opc2"
+    android:title="Configurar Usuario" />
+
+<item
+    android:id="@+id/Menu_Opc3"
+    android:title="Cerrar Sesion" />
+</menu>

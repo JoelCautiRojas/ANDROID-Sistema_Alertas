@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/navigation_mural"
+            android:icon="@drawable/policia_corriendo"
+            android:title="Mural" />
+        <item
+            android:id="@+id/navigation_alertas"
+            android:icon="@drawable/alertas_navi"
+            android:title="Alertas" />
+        <item
+            android:id="@+id/navigation_denuncias"
+            android:icon="@drawable/denuncias_navi"
+            android:title="Denuncias" />
+        <item
+            android:id="@+id/navigation_comisarias"
+            android:icon="@drawable/comisarias_navi"
+            android:title="Comisarias" />
+        <item
+            android:id="@+id/navigation_zonas_incidencia"
+            android:icon="@drawable/zonas_navi"
+            android:title="Zonas de Incidencia" />
+        <item
+            android:id="@+id/navigation_reclamos"
+            android:icon="@drawable/reclamos_sugerencias_navi"
+            android:title="Reclamos y Sugerencias" />
+        <item
+            android:id="@+id/navigation_directorio"
+            android:icon="@drawable/directorio_navi"
+            android:title="Directorio" />
+        <item
+            android:id="@+id/navigation_configuracion"
+            android:icon="@drawable/configuracion_navi"
+            android:title="Configuracion" />
+    </group>
+
+</menu>
