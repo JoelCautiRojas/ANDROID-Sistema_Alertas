@@ -53,6 +53,7 @@ public class PreloadActivity extends AppCompatActivity {
     String sesion_clave;
     String sesion_direccion;
     String sesion_estado;
+    String sesion_telefono;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -165,7 +166,7 @@ public class PreloadActivity extends AppCompatActivity {
         barprog.show();
         if (rows_usuario.moveToFirst())
         {
-            if("on".equals(rows_usuario.getString(8)))
+            if("on".equals(rows_usuario.getString(9)))
             {
                 AsyncHttpClient cliente = new AsyncHttpClient();
                 RequestParams parametros = new RequestParams();
@@ -183,35 +184,40 @@ public class PreloadActivity extends AppCompatActivity {
                                 if(jsmatriz.length() > 0)
                                 {
                                     JSONObject usuario = jsmatriz.getJSONObject(0);
-                                    // Cargando variables de sesion
-                                    sesion_idbd =  usuario.getString("id");
-                                    sesion_nombres = usuario.getString("nombres");
-                                    sesion_apellidos = usuario.getString("apellidos");
-                                    sesion_dni = usuario.getString("dni");
-                                    sesion_email = usuario.getString("correo");
-                                    sesion_clave = usuario.getString("clave");
-                                    sesion_direccion = usuario.getString("direccion");
-                                    sesion_estado = "on";
-                                    // Actualizando SQLite
-                                    try
+                                    if("0".equals(usuario.getString("estado")))
                                     {
-                                        ContentValues nuevoregistro = new ContentValues();
-                                        nuevoregistro.put("idbd",sesion_idbd);
-                                        nuevoregistro.put("nombres",sesion_nombres);
-                                        nuevoregistro.put("apellidos",sesion_apellidos);
-                                        nuevoregistro.put("dni",sesion_dni);
-                                        nuevoregistro.put("correo",sesion_email);
-                                        nuevoregistro.put("clave",sesion_clave);
-                                        nuevoregistro.put("direccion",sesion_direccion);
-                                        nuevoregistro.put("estado",sesion_estado);
-                                        int cant = db.update("usuario",nuevoregistro,"id=1",null);
+                                        Toast.makeText(getApplicationContext(),"Verifique su e-mail para activar su cuenta.",Toast.LENGTH_SHORT).show();
                                     }
-                                    catch (Exception e)
-                                    {
-                                        e.printStackTrace();
+                                    else {
+                                        // Cargando variables de sesion
+                                        sesion_idbd = usuario.getString("id");
+                                        sesion_nombres = usuario.getString("nombres");
+                                        sesion_apellidos = usuario.getString("apellidos");
+                                        sesion_dni = usuario.getString("dni");
+                                        sesion_email = usuario.getString("correo");
+                                        sesion_clave = usuario.getString("clave");
+                                        sesion_direccion = usuario.getString("direccion");
+                                        sesion_telefono = usuario.getString("telefono");
+                                        sesion_estado = "on";
+                                        // Actualizando SQLite
+                                        try {
+                                            ContentValues nuevoregistro = new ContentValues();
+                                            nuevoregistro.put("idbd", sesion_idbd);
+                                            nuevoregistro.put("nombres", sesion_nombres);
+                                            nuevoregistro.put("apellidos", sesion_apellidos);
+                                            nuevoregistro.put("dni", sesion_dni);
+                                            nuevoregistro.put("correo", sesion_email);
+                                            nuevoregistro.put("clave", sesion_clave);
+                                            nuevoregistro.put("direccion", sesion_direccion);
+                                            nuevoregistro.put("estado", sesion_estado);
+                                            nuevoregistro.put("telefono",sesion_telefono);
+                                            int cant = db.update("usuario", nuevoregistro, "id=1", null);
+                                        } catch (Exception e) {
+                                            e.printStackTrace();
+                                        }
+                                        db.close();
+                                        iniciarPrincipal();
                                     }
-                                    db.close();
-                                    iniciarPrincipal();
                                 }
                                 else
                                 {

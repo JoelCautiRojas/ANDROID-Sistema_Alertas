@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
 
 
@@ -22,7 +23,7 @@ public class CategoriasAlertasFragment extends Fragment {
     //Atributos
     Fragment fragmento;
     GridView menu;
-    MenuAdaptador adaptador;
+    MenuCardAdapter adaptador;
     String[] items_titulos = new String[]{
             "ACCIDENTES",
             "TRANSITO",
@@ -107,7 +108,59 @@ public class CategoriasAlertasFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_categorias_alertas, container, false);
+        View vista = inflater.inflate(R.layout.fragment_categorias_alertas, container, false);
+        menu = (GridView) vista.findViewById(R.id.menu_categoria_alertas);
+        adaptador = new MenuCardAdapter(items_titulos,items_imagenes,items_color,getContext());
+        menu.setAdapter(adaptador);
+        menu.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Bundle bundle = new Bundle();
+                Boolean changeFragment = false;
+                switch(i){
+                    case 0:
+                        bundle.putString("categoria","Accidentes");
+                        changeFragment = true;
+                        break;
+                    case 1:
+                        bundle.putString("categoria","Transito");
+                        changeFragment = true;
+                        break;
+                    case 2:
+                        bundle.putString("categoria","Crimen Organizado");
+                        changeFragment = true;
+                        break;
+                    case 3:
+                        bundle.putString("categoria","Delincuencia y Vandalismo");
+                        changeFragment = true;
+                        break;
+                    case 4:
+                        bundle.putString("categoria","Desastres Naturales");
+                        changeFragment = true;
+                        break;
+                    case 5:
+                        bundle.putString("categoria","Incendios");
+                        changeFragment = true;
+                        break;
+                    case 6:
+                        bundle.putString("categoria","Comercio Ilicito");
+                        changeFragment = true;
+                        break;
+                    case 7:
+                        bundle.putString("categoria","Emergencia Humanitaria");
+                        changeFragment = true;
+                        break;
+                    default:
+                        break;
+                }
+                if(changeFragment){
+                    fragmento = new AlertasFragment();
+                    getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.content_principal, fragmento).commit();
+                    fragmento.setArguments(bundle);
+                }
+            }
+        });
+        return vista;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

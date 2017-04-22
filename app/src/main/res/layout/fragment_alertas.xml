@@ -1,13 +1,374 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<FrameLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context="com.example.joel_64.apppnp.AlertasFragment">
+
+<android.support.constraint.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.joel_64.apppnp.AlertasFragment">
+    android:background="@drawable/gradiente_fondo">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <LinearLayout
+        android:layout_width="0dp"
+        android:background="#88000000"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintVertical_bias="0.0"
+        android:id="@+id/linearLayout">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2.7"
+            android:orientation="vertical"
+            android:paddingBottom="10dp"
+            android:paddingLeft="12dp"
+            android:paddingTop="10dp">
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:height="16dp"
+                android:text="Nombres :"
+                android:textSize="12dp"
+                android:textColor="#ffffff" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:height="16dp"
+                android:text="Apellidos :"
+                android:textSize="12dp"
+                android:textColor="#ffffff" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:height="16dp"
+                android:text="Dirección :"
+                android:textSize="12dp"
+                android:textColor="#ffffff" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:height="16dp"
+                android:text="Telefono :"
+                android:textSize="12dp"
+                android:textColor="#ffffff" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:height="16dp"
+                android:text="E-mail :"
+                android:textSize="12dp"
+                android:textColor="#ffffff" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:height="16dp"
+                android:textSize="12dp"
+                android:text="Categoria :"
+                android:textColor="#ffffff" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="7.3"
+            android:orientation="vertical"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingRight="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <TextView
+                android:textColor="#fff"
+                android:id="@+id/nombres_alerta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:height="16dp"
+                android:text=""
+                android:textSize="12dp" />
+
+            <TextView
+                android:textColor="#fff"
+                android:id="@+id/apellidos_alerta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:height="16dp"
+                android:text=""
+                android:textSize="12dp" />
+
+            <TextView
+                android:textColor="#fff"
+                android:id="@+id/direccion_alerta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:height="16dp"
+                android:text=""
+                android:textSize="12dp" />
+
+            <TextView
+                android:textColor="#fff"
+                android:id="@+id/telefono_alerta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:height="16dp"
+                android:text=""
+                android:textSize="12dp" />
+
+            <TextView
+                android:textColor="#fff"
+                android:id="@+id/email_alerta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:height="16dp"
+                android:text=""
+                android:textSize="12dp" />
+
+            <TextView
+                android:textColor="#fff"
+                android:id="@+id/categoria_alerta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:height="16dp"
+                android:text=""
+                android:textSize="12dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="#88000000"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintVertical_bias="0.0"
+        android:id="@+id/linearLayout4">
+
+        <TextView
+            android:textSize="11dp"
+            android:padding="1dp"
+            android:textColor="@color/foot_alert2"
+            android:layout_width="match_parent"
+            android:text="*  Para una respuesta efectiva mantega activo su ubicacion GPS."
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textSize="11dp"
+            android:padding="1dp"
+            android:textColor="@color/foot_alert2"
+            android:layout_width="match_parent"
+            android:text="*  Toda información presente se mantendrá en absoluta reserva."
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:padding="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="3dp"
+            android:paddingLeft="5dp"
+            android:text="Asunto :"
+            android:textColor="#fff"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="0dp" />
+
+        <EditText
+            android:id="@+id/asunto_alerta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff"
+            android:ems="10"
+            android:gravity="top"
+            android:inputType="textPersonName"
+            android:padding="5dp"
+            android:text=""
+            android:textColor="@color/colorPrimary"
+            android:textSize="12dp"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="0dp" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="3dp"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:text="Mensaje :"
+            android:textColor="#fff" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="10"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="0dp">
+
+            <EditText
+                android:id="@+id/mensaje_alerta"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="6"
+                android:background="#fff"
+                android:ems="10"
+                android:gravity="top"
+                android:inputType="textMultiLine"
+                android:padding="12dp"
+                android:text=""
+                android:textColor="@color/colorPrimary"
+                android:textSize="12dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="#fff"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:id="@+id/imagen_alerta"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#99000000"
+                        android:padding="5dp"
+                        android:src="@drawable/imagen_default" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#fff"
+                    android:orientation="vertical"
+                    android:paddingBottom="12dp"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp"
+                    android:paddingTop="0dp">
+
+                    <LinearLayout
+                        android:background="#696969"
+                        android:padding="1dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/seleccion_imagen_alerta"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:background="#fff"
+                            android:text="Seleccionar Imagen"
+                            android:textColor="#696969"
+                            android:textSize="12dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:orientation="horizontal"
+        android:paddingBottom="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <Button
+            android:id="@+id/enviar_alerta"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="2.5"
+            android:background="@drawable/gradiente_botones"
+            android:text="Enviar"
+            android:textColor="#fff"
+            android:textSize="12dp" />
+
+        <Button
+            android:id="@+id/cancelar_alerta"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="2.5"
+            android:background="@drawable/gradiente_botones"
+            android:text="Cancelar"
+            android:textColor="#fff"
+            android:textSize="12dp" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
 
 </FrameLayout>

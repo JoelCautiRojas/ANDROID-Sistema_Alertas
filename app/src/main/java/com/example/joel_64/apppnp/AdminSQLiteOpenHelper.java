@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 
 public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
-    String cadenaSQL = "CREATE TABLE usuario (id INTEGER PRIMARY KEY, idbd VARCHAR(11) ,nombres VARCHAR(50), apellidos VARCHAR(50), dni INTEGER(8), correo VARCHAR(50), clave VARCHAR(20), direccion TEXT, estado VARCHAR(3) )";
+    String cadenaSQL = "CREATE TABLE usuario (id INTEGER PRIMARY KEY, idbd VARCHAR(11) ,nombres VARCHAR(50), apellidos VARCHAR(50), dni INTEGER(8), correo VARCHAR(50), clave VARCHAR(20), direccion TEXT, telefono VARCHAR(50), estado VARCHAR(3) )";
     public AdminSQLiteOpenHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }

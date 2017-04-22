@@ -40,6 +40,7 @@ public class LoginActivity extends AppCompatActivity {
     String sesion_email;
     String sesion_clave;
     String sesion_direccion;
+    String sesion_telefono;
     String sesion_estado;
 
     @Override
@@ -112,52 +113,62 @@ public class LoginActivity extends AppCompatActivity {
                             {
                                 // Cargando variables de sesion
                                 JSONObject usuario = jsmatriz.getJSONObject(0);
-                                sesion_idbd = usuario.getString("id");
-                                sesion_nombres = usuario.getString("nombres");
-                                sesion_apellidos = usuario.getString("apellidos");
-                                sesion_dni = usuario.getString("dni");
-                                sesion_email = usuario.getString("correo");
-                                sesion_clave = usuario.getString("clave");
-                                sesion_direccion = usuario.getString("direccion");
-                                if(boton_recordarme.isChecked())
+                                if("0".equals(usuario.getString("estado")))
                                 {
-                                    sesion_estado = "on";
+                                    Toast.makeText(getApplicationContext(),"Verifique su e-mail para activar su cuenta.",Toast.LENGTH_SHORT).show();
                                 }
                                 else
                                 {
-                                    sesion_estado = "off";
+                                    sesion_idbd = usuario.getString("id");
+                                    sesion_nombres = usuario.getString("nombres");
+                                    sesion_apellidos = usuario.getString("apellidos");
+                                    sesion_dni = usuario.getString("dni");
+                                    sesion_email = usuario.getString("correo");
+                                    sesion_clave = usuario.getString("clave");
+                                    sesion_direccion = usuario.getString("direccion");
+                                    sesion_telefono = usuario.getString("telefono");
+                                    if(boton_recordarme.isChecked())
+                                    {
+                                        sesion_estado = "on";
+                                    }
+                                    else
+                                    {
+                                        sesion_estado = "off";
+                                    }
+                                    if(rows_usuario.moveToFirst())
+                                    {
+                                        // Si existe registro, modificar por los nuevos datos ingresados
+                                        ContentValues nuevoregistro = new ContentValues();
+                                        nuevoregistro.put("idbd",sesion_idbd);
+                                        nuevoregistro.put("nombres",sesion_nombres);
+                                        nuevoregistro.put("apellidos",sesion_apellidos);
+                                        nuevoregistro.put("dni",sesion_dni);
+                                        nuevoregistro.put("correo",sesion_email);
+                                        nuevoregistro.put("clave",sesion_clave);
+                                        nuevoregistro.put("direccion",sesion_direccion);
+                                        nuevoregistro.put("estado",sesion_estado);
+                                        nuevoregistro.put("telefono",sesion_telefono);
+                                        int cant = db.update("usuario",nuevoregistro,"id=1",null);
+                                    }
+                                    else
+                                    {
+                                        // Si no existe registro, crear nuevo registro.
+                                        ContentValues nuevoregistro = new ContentValues();
+                                        nuevoregistro.put("id",1);
+                                        nuevoregistro.put("idbd",sesion_idbd);
+                                        nuevoregistro.put("nombres",sesion_nombres);
+                                        nuevoregistro.put("apellidos",sesion_apellidos);
+                                        nuevoregistro.put("dni",sesion_dni);
+                                        nuevoregistro.put("correo",sesion_email);
+                                        nuevoregistro.put("clave",sesion_clave);
+                                        nuevoregistro.put("direccion",sesion_direccion);
+                                        nuevoregistro.put("estado",sesion_estado);
+                                        nuevoregistro.put("telefono",sesion_telefono);
+                                        db.insert("usuario",null,nuevoregistro);
+                                    }
+                                    db.close();
+                                    iniciarPrincipal();
                                 }
-                                if(rows_usuario.moveToFirst())
-                                {
-                                    // Si existe registro, modificar por los nuevos datos ingresados
-                                    ContentValues nuevoregistro = new ContentValues();
-                                    nuevoregistro.put("idbd",sesion_idbd);
-                                    nuevoregistro.put("nombres",sesion_nombres);
-                                    nuevoregistro.put("apellidos",sesion_apellidos);
-                                    nuevoregistro.put("dni",sesion_dni);
-                                    nuevoregistro.put("correo",sesion_email);
-                                    nuevoregistro.put("clave",sesion_clave);
-                                    nuevoregistro.put("direccion",sesion_direccion);
-                                    nuevoregistro.put("estado",sesion_estado);
-                                    int cant = db.update("usuario",nuevoregistro,"id=1",null);
-                                }
-                                else
-                                {
-                                    // Si no existe registro, crear nuevo registro.
-                                    ContentValues nuevoregistro = new ContentValues();
-                                    nuevoregistro.put("id",1);
-                                    nuevoregistro.put("idbd",sesion_idbd);
-                                    nuevoregistro.put("nombres",sesion_nombres);
-                                    nuevoregistro.put("apellidos",sesion_apellidos);
-                                    nuevoregistro.put("dni",sesion_dni);
-                                    nuevoregistro.put("correo",sesion_email);
-                                    nuevoregistro.put("clave",sesion_clave);
-                                    nuevoregistro.put("direccion",sesion_direccion);
-                                    nuevoregistro.put("estado",sesion_estado);
-                                    db.insert("usuario",null,nuevoregistro);
-                                }
-                                db.close();
-                                iniciarPrincipal();
                             }
                             else
                             {
